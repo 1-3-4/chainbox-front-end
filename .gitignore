@@ -1,0 +1,5 @@
+# Ignore folder with given files for the project:
+/opg
+
+# Ignore npm programme files:
+/node_modules

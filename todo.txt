@@ -1,0 +1,15 @@
+x Set up git repository.
+    x Add given project files.
+    x Add default .gitignore
+* Add gulp to project.
+    x Change default gulpfile.js to match project.
+    x Add package.json : npm init
+    x Add gulp dependencies to package.json
+    x Install gulp in project: npm install
+    x Change .gitignore so npm programme files are ignored.
+x Create project file stucture.
+* Create admin panel.
+    * Draw wireframe of admin panel.
+    * Write HTML5.
+    * Validate HTML5.
+    * Write CSS (SCSS with BEM).
