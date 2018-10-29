@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <header>
+            <h1>CMS - Lises Foodblog</h1>
+            <button type="button" name="button">Login</button>
+        </header>
+        <aside class="">
+            <article class="">
+                <h3>Posts</h3>
+                <ul>
+                    <li><a href="#">Publish post</a></li>
+                    <li><a href="#">Edit post</a></li>
+                </ul>
+            </article>
+            <article class="">
+                <h3>Users</h3>
+                <ul>
+                    <li><a href="#">Create user</a></li>
+                    <li><a href="#">Edit user</a></li>
+                </ul>
+            </article>
+        </aside>
+        <main>
+            <h2>Publish a new post</h2>
+            <form class="" action="index.html" method="post">
+
+                <label for="">Post title</label>
+                <input type="text" name="" value="" placeholder="Write the title of your post">
+
+                <label for="">Select author</label>
+                <select class="" name="">
+                    <!--
+                    select tag does not support placeholder text, first option used instead:
+                    Source: https://www.codelibrary.me/2015/07/13/placeholder-for-html-select-box
+                    -->
+                    <option value="" disabled selected hidden>Select post author</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                </select>
+
+                <label for="">Post content</label>
+                <textarea name="name" rows="8" cols="80" placeholder="Write the content of your post..."></textarea>
+
+                <label for="">Featured image</label>
+
+            </form>
+        </main>
+    </body>
+</html>

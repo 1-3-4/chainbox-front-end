@@ -9,7 +9,7 @@ x Set up git repository.
     x Change .gitignore so npm programme files are ignored.
 x Create project file stucture.
 * Create admin panel.
-    * Draw wireframe of admin panel.
+    x Draw wireframe of admin panel.
     * Write HTML5.
     * Validate HTML5.
     * Write CSS (SCSS with BEM).
