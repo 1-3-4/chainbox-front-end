@@ -1,0 +1,6 @@
+.admin-nav__heading {
+    @extend %heading_reset;
+    padding: $spacing;
+    font-size: $admin-nav__title_text-size;
+    font-weight: bold;
+}

@@ -1,0 +1,46 @@
+// VARIABLES
+$spacing: 15px;
+
+$clr_white: rgba(255, 255, 255, 1);
+$clr_silver: rgba(236, 238, 239, 1);
+$clr_grey: rgba(149, 152, 154, 1);
+$clr_charcoal: rgba(55, 58, 60, 1);
+$clr_blue: rgba(28, 124, 213, 1);
+
+$font_global: helvetica, arial, sans-serif;
+
+/* GLOBAL */
+@import "bem/reset";
+
+/* ADMIN HEADER */
+$admin-header_bg-clr: $clr_charcoal;
+
+$admin-header__btn_text-size: 12px;
+$admin-header__btn_txt-clr: $clr_white;
+
+$admin-header__title_txt-clr: $clr_white;
+$admin-header__title_txt-size: 16px;
+
+@import "bem/admin-page";
+@import "bem/admin-header";
+@import "bem/admin-header__btn";
+@import "bem/admin-header__title";
+
+/* NAVIGATION */
+$admin-nav_bg-clr: $clr_silver;
+
+$admin-nav__link_text-clr: $clr_blue;
+$admin-nav__link_text-size: 12px;
+$admin-nav__link-bg-clr_hover: $clr_blue;
+$admin-nav__link-text-color_hover: $clr_white;
+
+$admin-nav__title_text-size: 17px;
+
+@import "bem/admin-nav";
+@import "bem/admin-nav__heading";
+@import "bem/admin-nav__list";
+@import "bem/admin-nav__item";
+@import "bem/admin-nav__link";
+
+/* CONTENT */
+@import "bem/admin-content";

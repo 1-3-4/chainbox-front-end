@@ -1,0 +1,11 @@
+.admin-nav__link {
+    @extend %link-reset;
+    padding: $spacing $spacing*2;
+    font-size: $admin-nav__link_text-size;
+    color: $admin-nav__link_text-clr;
+    &:hover {
+        font-weight: bold;
+        color: $admin-nav__link-text-color_hover;
+        background-color: $admin-nav__link-bg-clr_hover;
+    }
+}

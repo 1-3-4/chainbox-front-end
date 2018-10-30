@@ -1,0 +1,9 @@
+.admin-header__title {
+    @extend %heading_reset;
+    padding: $spacing 0;
+    width: auto;
+
+    font-size: $admin-header__title_txt-size;
+
+    color: $admin-header__title_txt-clr;
+}

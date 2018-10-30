@@ -11,5 +11,5 @@ x Create project file stucture.
 * Create admin panel.
     x Draw wireframe of admin panel.
     x Write HTML5.
-    * Validate HTML5.
+    x Validate HTML5.
     * Write CSS (SCSS with BEM).

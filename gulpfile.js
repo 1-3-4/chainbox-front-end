@@ -10,7 +10,7 @@ var localhost = 'C:/apps/xampp/htdocs/';
 var paths = {
 	src: 'src/**/*',
 	srcHTML: 'src/**/*.html',
-	srcSCSS: 'src/bem/**/*.scss',
+	srcSCSS: 'src/**/*.scss',
 	srcJS: 'src/**/*.js',
 
 	tmp: localhost + 'tmp',

@@ -1,0 +1,9 @@
+.admin-header__btn {
+    @extend %btn_reset;
+    padding: $spacing;
+    width: auto;
+
+    font-size: $admin-header__btn_text-size;
+
+    color: $admin-header__btn_txt-clr;
+}

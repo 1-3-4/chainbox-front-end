@@ -1,0 +1,35 @@
+$clr_none: rgba(255, 255, 255, 0);
+
+html { height: 100%;}
+body { min-height: 100%;}
+
+%reset {
+    box-sizing: border-box;
+    display: block;
+    margin: 0;
+    outline: 0;
+    border: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+
+    line-height: 1;
+    font-family: $font_global;
+    font-size: 1em;
+}
+%btn_reset {
+    @extend %reset;
+    background-color: $clr_none;
+}
+%heading_reset {
+    @extend %reset;
+    font-weight: normal;
+}
+%link-reset {
+    @extend %reset;
+    text-decoration: none;
+}
+%list-reset_hidden {
+    @extend %reset;
+    list-style-type: none;
+}
