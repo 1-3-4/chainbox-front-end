@@ -10,6 +10,6 @@ x Set up git repository.
 x Create project file stucture.
 * Create admin panel.
     x Draw wireframe of admin panel.
-    * Write HTML5.
+    x Write HTML5.
     * Validate HTML5.
     * Write CSS (SCSS with BEM).

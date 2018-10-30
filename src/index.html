@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>CMS admin panel</title>
     </head>
     <body>
-        <header>
-            <h1>CMS - Lises Foodblog</h1>
-            <button type="button" name="button">Login</button>
+        <header class="admin-header">
+            <h1 class="admin-header__title">CMS - Lises Foodblog</h1>
+            <button type="button" class="admin-header__btn">Login</button>
         </header>
         <nav class="">
             <h3>Posts</h3>
@@ -25,34 +25,34 @@
             <h2>Publish a new post</h2>
             <form class="" action="index.html" method="post">
 
-                <p for="">Post title</p>
-                <input type="text" name="" value="" placeholder="Write the title of your post">
+                <p>Post title</p>
+                <input type="text" placeholder="Write the title of your post">
 
-                <p for="">Select author</p>
-                <select class="" name="">
+                <p>Select author</p>
+                <select class="">
                     <!--
                     select tag does not support placeholder text, first option used instead:
                     Source: https://www.codelibrary.me/2015/07/13/placeholder-for-html-select-box
                     -->
-                    <option value="" disabled selected hidden>Select post author</option>
-                    <option value="">1</option>
-                    <option value="">2</option>
+                    <option disabled selected hidden>Select post author</option>
+                    <option >1</option>
+                    <option >2</option>
                 </select>
 
-                <p for="">Post content</p>
-                <textarea name="name" rows="8" cols="80" placeholder="Write the content of your post..."></textarea>
+                <p>Post content</p>
+                <textarea rows="8" cols="80" placeholder="Write the content of your post..."></textarea>
 
-                <p for="">Featured image</p>
+                <p>Featured image</p>
 
                 <!-- The instructions would suggest using this: -->
-                <input type="url" name="" value="">
+                <input type="url">
 
                 <!-- The mockup would suggest using thsi: -->
-                <input type="file" name="" value="">
+                <input type="file">
 
                 <p>Choose an image from the internet and use its URL</p>
 
-                <input type="submit" name="" value="Publish">
+                <input type="submit" value="Publish">
 
             </form>
         </main>
