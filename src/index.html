@@ -9,30 +9,26 @@
             <h1>CMS - Lises Foodblog</h1>
             <button type="button" name="button">Login</button>
         </header>
-        <aside class="">
-            <article class="">
-                <h3>Posts</h3>
-                <ul>
-                    <li><a href="#">Publish post</a></li>
-                    <li><a href="#">Edit post</a></li>
-                </ul>
-            </article>
-            <article class="">
-                <h3>Users</h3>
-                <ul>
-                    <li><a href="#">Create user</a></li>
-                    <li><a href="#">Edit user</a></li>
-                </ul>
-            </article>
-        </aside>
+        <nav class="">
+            <h3>Posts</h3>
+            <ul>
+                <li><a href="#">Publish post</a></li>
+                <li><a href="#">Edit post</a></li>
+            </ul>
+            <h3>Users</h3>
+            <ul>
+                <li><a href="#">Create user</a></li>
+                <li><a href="#">Edit user</a></li>
+            </ul>
+        </nav>
         <main>
             <h2>Publish a new post</h2>
             <form class="" action="index.html" method="post">
 
-                <label for="">Post title</label>
+                <p for="">Post title</p>
                 <input type="text" name="" value="" placeholder="Write the title of your post">
 
-                <label for="">Select author</label>
+                <p for="">Select author</p>
                 <select class="" name="">
                     <!--
                     select tag does not support placeholder text, first option used instead:
@@ -43,10 +39,20 @@
                     <option value="">2</option>
                 </select>
 
-                <label for="">Post content</label>
+                <p for="">Post content</p>
                 <textarea name="name" rows="8" cols="80" placeholder="Write the content of your post..."></textarea>
 
-                <label for="">Featured image</label>
+                <p for="">Featured image</p>
+
+                <!-- The instructions would suggest using this: -->
+                <input type="url" name="" value="">
+
+                <!-- The mockup would suggest using thsi: -->
+                <input type="file" name="" value="">
+
+                <p>Choose an image from the internet and use its URL</p>
+
+                <input type="submit" name="" value="Publish">
 
             </form>
         </main>
