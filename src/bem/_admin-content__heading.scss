@@ -1,0 +1,6 @@
+.admin-content__heading {
+    @extend %heading-reset;
+    margin-bottom: $spacing*2;
+    font-size: $admin-content__heading-text-size;
+    font-weight: bold;
+}

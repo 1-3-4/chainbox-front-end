@@ -1,0 +1,19 @@
+.admin-content__input {
+    @extend %input-reset;
+    margin-bottom: $spacing*2;
+    border-color: $admin-content__input-border-clr;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: ($spacing/3)*2;
+    font-size: $admin-content__input-text-size;
+    color: $admin-content__input-text-clr;
+    &::-webkit-input-placeholder, &:-ms-input-placeholder, &::placeholder {
+        // font-family: $font_global;
+        color: $admin-content__input-placeholder-clr;
+    }
+    &:focus {
+        box-shadow: 0 0 3px 2px $admin-content__input-outline-clr_focus;
+
+    }
+}

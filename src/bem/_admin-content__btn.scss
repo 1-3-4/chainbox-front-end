@@ -1,0 +1,13 @@
+.admin-content__btn {
+    @extend %btn_reset;
+    padding: $spacing $spacing*1.5;
+    border-radius: $spacing/3;
+    position: absolute;
+    right: 0;
+    font-size: $admin-content__btn-text-size;
+    &_cta {
+        @extend .admin-content__btn;
+        color: $admin-content__btn-text-clr_cta;
+        background-color: $admin-content__btn-bg-clr_cta;
+    }
+}

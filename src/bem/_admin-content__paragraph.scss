@@ -1,0 +1,11 @@
+.admin-content__paragraph {
+    @extend %text-reset;
+    margin: $spacing 0;
+    font-size: $admin-content__paragraph-text-size;
+    &_small {
+        @extend %text-reset;
+        margin: ($spacing/3)*2 0;
+        font-size: $admin-content__paragraph-text-size_small;
+        color: $admin-content__paragraph-text-clr_small;
+    }
+}

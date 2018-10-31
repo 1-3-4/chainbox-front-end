@@ -23,14 +23,14 @@
             </ul>
         </nav>
         <main class="admin-content">
-            <h2>Publish a new post</h2>
-            <form class="" action="index.html" method="post">
+            <h2 class="admin-content__heading">Publish a new post</h2>
+            <form class="admin-content__form_post" action="index.html" method="post">
 
-                <p>Post title</p>
-                <input type="text" placeholder="Write the title of your post">
+                <p class="admin-content__paragraph">Post title</p>
+                <input class="admin-content__input" type="text" placeholder="Write the title of your post">
 
-                <p>Select author</p>
-                <select class="">
+                <p class="admin-content__paragraph">Select author</p>
+                <select class="admin-content__dropdown">
                     <!--
                     select tag does not support placeholder text, first option used instead:
                     Source: https://www.codelibrary.me/2015/07/13/placeholder-for-html-select-box
@@ -40,20 +40,20 @@
                     <option >2</option>
                 </select>
 
-                <p>Post content</p>
-                <textarea rows="8" cols="80" placeholder="Write the content of your post..."></textarea>
+                <p class="admin-content__paragraph">Post content</p>
+                <textarea class="admin-content__input" rows="8" placeholder="Write the content of your post..."></textarea>
 
-                <p>Featured image</p>
+                <p class="admin-content__paragraph">Featured image</p>
 
                 <!-- The instructions would suggest using this: -->
-                <input type="url">
+                <input class="admin-content__input" type="url">
 
-                <!-- The mockup would suggest using thsi: -->
-                <input type="file">
+                <!-- The mockup would suggest using this: -->
+                <!-- <input class="admin-content__input" type="file"> -->
 
-                <p>Choose an image from the internet and use its URL</p>
+                <p class="admin-content__paragraph_small">Choose an image from the internet and use its URL</p>
 
-                <input type="submit" value="Publish">
+                <input class="admin-content__btn_cta" type="submit" value="Publish">
 
             </form>
         </main>
