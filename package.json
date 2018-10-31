@@ -16,6 +16,7 @@
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-livereload": "^4.0.0",
+    "gulp-purgecss": "^1.1.1",
     "gulp-sass": "^4.0.2"
   },
   "bugs": {
