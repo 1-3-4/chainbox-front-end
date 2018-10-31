@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var concat = require('gulp-concat');
 var livereload = require('gulp-livereload');
 
 // Path to localhost on AspIT computer:
@@ -36,6 +37,7 @@ gulp.task('css', function () {
 
 gulp.task('js', function () {
 	return gulp.src(paths.srcJS)
+        .pipe(concat('script.js'))
 		.pipe(gulp.dest(paths.tmpJS))
 		.pipe(livereload());
 });

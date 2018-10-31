@@ -7,9 +7,14 @@ x Set up git repository.
     x Add gulp dependencies to package.json
     x Install gulp in project: npm install
     x Change .gitignore so npm programme files are ignored.
-x Create project file stucture.
-* Create admin panel.
+x Create project file structure.
+x Create admin panel.
     x Draw wireframe of admin panel.
     x Write HTML5.
     x Validate HTML5.
-    * Write CSS (SCSS with BEM).
+    x Write CSS (SCSS with BEM).
+* Add JS functionality to page.
+    * Set up JS modules by using IIFEs.
+    * Change options in dropdown to contain authors in db:
+        * Get data from db.
+        * Updata ui dropdown.
