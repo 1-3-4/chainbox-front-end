@@ -5,9 +5,9 @@ var concat = require('gulp-concat');
 var livereload = require('gulp-livereload');
 
 // Path to localhost on AspIT computer:
-// var localhost = 'C:/apps/xampp/htdocs/';
+var localhost = 'C:/apps/xampp/htdocs/';
 // Path to localhost on private computer:
-var localhost = 'C:/apps/wamp64/www/';
+// var localhost = 'C:/apps/wamp64/www/';
 
 var paths = {
 	src: 'src/**/*',
