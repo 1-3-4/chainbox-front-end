@@ -11,6 +11,15 @@ var dataCtrl = ( function () {
         this.numberOfPosts = numberOfPosts; // int
         this.numberOfComments = numberOfComments // int
         this.registerDate = registerDate; // datetime2fromparts ???
+    };
+    var Post = function ( id, title, content, imageUrl, dateOfPost, postingUserID, user) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.imageUrl = imageUrl;
+        this.dateOfPost = dateOfPost;
+        this.postingUserID = postingUserID;
+        this.user = user;
     }
 
     // VARIABLE(S)
