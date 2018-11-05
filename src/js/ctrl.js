@@ -1,16 +1,23 @@
-console.log('Controller loaded.');
+console.log('Controller module loaded.');
 
 var ctrl = ( function () {
     // PRIVATE FUNCTION(S)
-    var setupAuthorDropdown = function () {
+    var ctrlAddAuthorSelection = async function () {
+        var users;
         // Get user data:
-        // Display data in UI:
-    }
+        users = await dataCtrl.getUsers();
+        // Add user names to UI:
+        uiCtrl.addAuthorSelection( users );
+    };
+
     // PUBLIC FUNCTION(S)
     return {
         init: function () {
-            // Setup dropdown of authors:
-            setupAuthorDropdown();
+
+            ctrlAddAuthorSelection();
+
         }
     }
 }) ();
+
+ctrl.init();

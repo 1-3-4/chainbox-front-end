@@ -40,7 +40,8 @@ gulp.task('css', function () {
 });
 
 gulp.task('js', function () {
-	return gulp.src(paths.srcJS)
+	// return gulp.src(paths.srcJS)
+    return gulp.src( ['./src/js/data.js', './src/js/ui.js', './src/js/ctrl.js'] )
         .pipe(concat('script.js'))
 		.pipe(gulp.dest(paths.tmpJS))
 		.pipe(livereload());
