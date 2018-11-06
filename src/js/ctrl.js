@@ -12,39 +12,24 @@ var ctrl = ( function () {
     var ctrlAddPost = function () {
         // Get data from UI:
         var postData = uiCtrl.getPostInput();
-        alert(postData.postTitle + ' ' + postData.postAuthorID + ' ' + postData.postContent + ' ' + postData.postImgURL);
         // Validate data:
-        // Create post object:
 
-        var post = new Post(
-            null,
-            postData.postTitle,
-            postData.postContent,
-            postData.postImgURL,
-            dateOfPost,
-            postData.postAuthorID,
-            []
-        );
+        // Create post object:
+        var post = dataCtrl.createPost( postData );
         // Add post object to DB:
         // Display success message:
         // Clear UI input fields:
+        uiCtrl.clearPostInputs();
     };
 
     // PUBLIC FUNCTION(S)
     return {
         init: function () {
 
-            setupAuthorSelection();
+            // setupAuthorSelection();
 
             var dom = uiCtrl.getDomStrings();
             document.getElementById(dom.postBtnID).addEventListener( 'click', ctrlAddPost );
-
-            var date = new Date();
-            var y = date.getFullYear();
-            var m = date.getMonth();
-            var d = date.getDate();
-            const dateOfPost = y + '-' + m + '-' + d;
-            alert(dateOfPost);
 
         }
     }

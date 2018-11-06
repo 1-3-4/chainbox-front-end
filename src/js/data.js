@@ -20,13 +20,14 @@ var dataCtrl = ( function () {
         this.dateOfPost = dateOfPost;
         this.postingUserID = postingUserID;
         this.user = user;
-    }
+    };
 
     // VARIABLE(S)
     var apiHost = 'https://localhost:44321/api/';
     var api = {
         users: apiHost + 'userinfoes',
-        posts: apiHost + 'posts',
+        // posts: apiHost + 'posts',
+        posts: 'https://ghibliapi.herokuapp.com/films',
         comments: apiHost + 'comments'
     }
 
@@ -41,6 +42,25 @@ var dataCtrl = ( function () {
 
     // PUBLIC FUNCTION(S)
     return {
+        createPost: function ( obj ) {
+            // ??? Does the DB add the date by itself? Just like it generates an unique id.
+            // Create date for post object:
+            const date = new Date();
+            const dateOfPost = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate();
+
+            var post = new Post(
+                null, // id
+                obj.postTitle, // title
+                obj.postContent, // content
+                obj.postImgURL, // imageUrl
+                dateOfPost, // dateOfPost
+                obj.postAuthorID, // postingUserID
+                // !!! Create a function to get a user based on their id.
+                [] // user
+            );
+
+            return post;
+        },
         getUsers: function () {
             var users = [];
             return getJSON( api.users )
@@ -63,6 +83,7 @@ var dataCtrl = ( function () {
         },
         getPosts: function () {},
         getComments: function () {},
+        // !!!
         testing: function functionName() {
 
         }

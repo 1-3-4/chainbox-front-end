@@ -29,7 +29,17 @@ var uiCtrl = ( function () {
                 postContent: document.getElementById(domStrings.postContentID).value,
                 postImgURL: document.getElementById(domStrings.postImgID).value
             };
+        },
+        clearPostInputs: function () {
+            var fieldsArray = new Array(
+                document.getElementById( domStrings.postTitleID ),
+                document.getElementById( domStrings.postContentID ),
+                document.getElementById( domStrings.postImgID )
+            );
+            fieldsArray.forEach( function ( currentElement ) {
+                currentElement.value = '';
+            } );
+            domStrings.postAuthorSelection.selectedIndex = 0;
         }
-
     }
 }) ();
