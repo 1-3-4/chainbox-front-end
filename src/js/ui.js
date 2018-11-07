@@ -24,10 +24,10 @@ var uiCtrl = ( function () {
         },
         getPostInput: function () {
             return {
-                postTitle: document.getElementById(domStrings.postTitleID).value,
-                postAuthorID: domStrings.postAuthorSelection[domStrings.postAuthorSelection.selectedIndex].id.slice( 7 ),
-                postContent: document.getElementById(domStrings.postContentID).value,
-                postImgURL: document.getElementById(domStrings.postImgID).value
+                title: document.getElementById(domStrings.postTitleID).value,
+                authorID: domStrings.postAuthorSelection[domStrings.postAuthorSelection.selectedIndex].id.slice( 7 ),
+                content: document.getElementById(domStrings.postContentID).value,
+                imgURL: document.getElementById(domStrings.postImgID).value
             };
         },
         clearPostInputs: function () {

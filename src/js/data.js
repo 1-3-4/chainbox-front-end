@@ -12,22 +12,21 @@ var dataCtrl = ( function () {
         this.numberOfComments = numberOfComments // int
         this.registerDate = registerDate; // datetime2fromparts ???
     };
-    var Post = function ( id, title, content, imageUrl, dateOfPost, postingUserID, user) {
+    var Post = function ( id, title, content, imageUrl, dateOfPost, postingUserID, postingUser) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.imageUrl = imageUrl;
         this.dateOfPost = dateOfPost;
         this.postingUserID = postingUserID;
-        this.user = user;
+        this.postingUser = postingUser;
     };
 
     // VARIABLE(S)
     var apiHost = 'https://localhost:44321/api/';
     var api = {
         users: apiHost + 'userinfoes',
-        // posts: apiHost + 'posts',
-        posts: 'https://ghibliapi.herokuapp.com/films',
+        posts: apiHost + 'posts',
         comments: apiHost + 'comments'
     }
 
@@ -39,27 +38,48 @@ var dataCtrl = ( function () {
             } )
         ;
     };
+    var apiFetch = async function ( apiSrc , method, dataStr ) {
+        const res = await fetch( apiSrc, {
+            method: method,
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: dataStr
+        } );
+        const content = await res.json();
+        console.log( content );
+    };
+    var createPost = function ( title, authorID, content, url ) {
+        // Create date for post object:
+        const date = new Date();
+        const dateOfPost = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + 'T00:00:00';
+
+        var post = new Post(
+            null, // id
+            title, // title
+            content, // content
+            url, // imageUrl
+            dateOfPost, // dateOfPost
+            authorID, // postingUserID
+            null // postingUser
+        );
+
+        return post;
+    };
 
     // PUBLIC FUNCTION(S)
     return {
-        createPost: function ( obj ) {
-            // ??? Does the DB add the date by itself? Just like it generates an unique id.
-            // Create date for post object:
-            const date = new Date();
-            const dateOfPost = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate();
-
-            var post = new Post(
-                null, // id
-                obj.postTitle, // title
-                obj.postContent, // content
-                obj.postImgURL, // imageUrl
-                dateOfPost, // dateOfPost
-                obj.postAuthorID, // postingUserID
-                // !!! Create a function to get a user based on their id.
-                [] // user
-            );
-
-            return post;
+        addPost: function ( title, authorID, content, url ) {
+            // Create a full post obj from data provided in the argument obj:
+            let post = createPost( title, authorID, content, url );
+            // Remove unused properties from post object:
+            delete post.id;
+            delete post.postingUser;
+            // Turn JS object into JSON string:
+            var postJSONstr = JSON.stringify( post );
+            // Send JSON string to DB:
+            apiFetch( api.posts, 'POST', postJSONstr );
         },
         getUsers: function () {
             var users = [];
@@ -81,11 +101,5 @@ var dataCtrl = ( function () {
                 })
             ;
         },
-        getPosts: function () {},
-        getComments: function () {},
-        // !!!
-        testing: function functionName() {
-
-        }
     };
 }) ();

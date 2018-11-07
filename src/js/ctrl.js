@@ -14,10 +14,9 @@ var ctrl = ( function () {
         var postData = uiCtrl.getPostInput();
         // Validate data:
 
-        // Create post object:
-        var post = dataCtrl.createPost( postData );
+        // Create post object and
         // Add post object to DB:
-        // Display success message:
+        dataCtrl.addPost( postData.title, postData.authorID, postData.content, postData.imgURL );
         // Clear UI input fields:
         uiCtrl.clearPostInputs();
     };
@@ -26,7 +25,7 @@ var ctrl = ( function () {
     return {
         init: function () {
 
-            // setupAuthorSelection();
+            setupAuthorSelection();
 
             var dom = uiCtrl.getDomStrings();
             document.getElementById(dom.postBtnID).addEventListener( 'click', ctrlAddPost );
