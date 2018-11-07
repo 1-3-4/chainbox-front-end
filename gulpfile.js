@@ -12,13 +12,13 @@ var localhost = 'C:/apps/xampp/htdocs/';
 var paths = {
 	src: 'src/**/*',
 	srcHTML: 'src/**/*.html',
-	// srcSCSS: 'src/**/*.scss',
-	srcSCSS: 'src/css/*.css',
+	srcSCSS: 'src/**/*.scss',
+	// srcSCSS: 'src/css/*.css',
 	srcJS: 'src/**/*.js',
 
 	tmp: localhost + 'tmp',
 	tmpHTML: localhost + 'tmp/**/*.html',
-	tmpCSS: localhost + 'tmp/css/',
+	tmpCSS: localhost + 'tmp/',
 	tmpJS: localhost + 'tmp/'
 };
 
