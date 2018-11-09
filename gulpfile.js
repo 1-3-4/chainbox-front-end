@@ -1,5 +1,7 @@
 var gulp = require('gulp');
+var inject = require('gulp-inject');
 var sass = require('gulp-sass');
+var babel = require('gulp-babel');
 var purgecss = require('gulp-purgecss');
 var concat = require('gulp-concat');
 var livereload = require('gulp-livereload');
@@ -18,8 +20,8 @@ var paths = {
 
 	tmp: localhost + 'tmp',
 	tmpHTML: localhost + 'tmp/**/*.html',
-	tmpCSS: localhost + 'tmp/',
-	tmpJS: localhost + 'tmp/'
+	tmpCSS: localhost + 'tmp/**/*.css',
+	tmpJS: localhost + 'tmp/**/*js'
 };
 
 gulp.task('default', ['watch']);
@@ -43,13 +45,25 @@ gulp.task('js', function () {
 	// return gulp.src(paths.srcJS)
     return gulp.src( ['./src/js/data.js', './src/js/ui.js', './src/js/ctrl.js'] )
         .pipe(concat('script.js'))
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
 		.pipe(gulp.dest(paths.tmpJS))
 		.pipe(livereload());
 });
 
+gulp.task('inject', [ 'html' ], function () {
+    var css = gulp.src(paths.tmpCSS, {read:false});
+    var js = gulp.src(paths.tmpJS, {read:false});
+    return gulp.src(paths.tmpHTML)
+        .pipe(inject( css, { relative:true, removeTags: true } ))
+        .pipe(inject( js, { relative:true, removeTags:true } ))
+        .pipe(gulp.dest(paths.tmp));
+});
+
 gulp.task('watch', ['html', 'css', 'js'], function () {
 	livereload.listen();
-	gulp.watch(paths.srcHTML, ['html', 'css']);
+	gulp.watch(paths.srcHTML, ['html', 'css', 'inject']);
 	gulp.watch(paths.srcSCSS, ['css']);
 	gulp.watch(paths.srcJS, ['js']);
 });
