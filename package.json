@@ -14,8 +14,10 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.5",
+    "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.5",
     "gulp": "^3.9.1",
+    "gulp-append-prepend": "^1.0.4",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-inject": "^4.3.2",

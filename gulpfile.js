@@ -4,6 +4,7 @@ var sass = require('gulp-sass');
 var babel = require('gulp-babel');
 var purgecss = require('gulp-purgecss');
 var concat = require('gulp-concat');
+var gap = require('gulp-append-prepend');
 var livereload = require('gulp-livereload');
 
 // Path to localhost on AspIT computer:
@@ -39,12 +40,12 @@ gulp.task('css', function () {
 });
 
 gulp.task('js', function () {
-    return gulp
-        // .src( paths.srcJS )
-        .src( ['./src/js/data.js', './src/js/ui.js', './src/js/ctrl.js'] )
-        .pipe( babel( { presets: ['@babel/env'] } ) )
-        .pipe( concat( 'script.js' ) )
-        .pipe( gulp.dest( paths.tmp ) );
+    var polyfill = './node_modules/@babel/polyfill/browser.js';
+    return gulp.src( './src/js/data.js', './src/js/ui.js', './src/js/ctrl.js' )
+        .pipe( babel( { presets: [ '@babel/env' ] } ) ) // Transpiles js files using babel.
+        .pipe( concat( 'script.js' ) ) // Concats js files into one file.
+        .pipe( gap.prependFile( polyfill ) ) // Prepends babel polyfill to js file.
+        .pipe( gulp.dest( paths.tmp ) )
 });
 
 gulp.task('copy', ['html', 'css', 'js'] );
