@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var inject = require('gulp-inject');
 var sass = require('gulp-sass');
-// var babel = require('gulp-babel');
+var babel = require('gulp-babel');
 var purgecss = require('gulp-purgecss');
 var concat = require('gulp-concat');
 var livereload = require('gulp-livereload');
@@ -42,12 +42,12 @@ gulp.task('js', function () {
     return gulp
         // .src( paths.srcJS )
         .src( ['./src/js/data.js', './src/js/ui.js', './src/js/ctrl.js'] )
-        // .pipe( babel( { presets: ['@babel/env'] } ) )
+        .pipe( babel( { presets: ['@babel/env'] } ) )
         .pipe( concat( 'script.js' ) )
         .pipe( gulp.dest( paths.tmp ) );
 });
 
-gulp.task('copy', ['html', 'css', 'js']);
+gulp.task('copy', ['html', 'css', 'js'] );
 
 gulp.task('inject', ['copy'], function () {
     var css = gulp.src(paths.tmpCSS, {read:false});
