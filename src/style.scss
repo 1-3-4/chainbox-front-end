@@ -1,1 +1,6 @@
 @import "scss/bootstrap";
+
+/*  BOOTSTRAP OVERWRITES */
+.nav-pills .nav-link {
+    border-radius: 0rem;
+}
